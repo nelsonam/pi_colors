@@ -1,3 +1,22 @@
+import processing.core.*; 
+import processing.xml.*; 
+
+import java.applet.*; 
+import java.awt.Dimension; 
+import java.awt.Frame; 
+import java.awt.event.MouseEvent; 
+import java.awt.event.KeyEvent; 
+import java.awt.event.FocusEvent; 
+import java.awt.Image; 
+import java.io.*; 
+import java.net.*; 
+import java.text.*; 
+import java.util.*; 
+import java.util.zip.*; 
+import java.util.regex.*; 
+
+public class pi_colors extends PApplet {
+
 float x=0;
 float y=0;
 
@@ -9,7 +28,7 @@ int digit_index = 0;
 File file = new File("digits");
 
 
-void setup()
+public void setup()
 {
   size(500,500);
   background(255);
@@ -23,40 +42,40 @@ void setup()
       if(digits[digit_index] == 1)
       {
        //fill(#F743AC); //pink 
-       fill(#FF0000); //red  
+       fill(0xffFF0000); //red  
       }
       else if(digits[digit_index] == 2)
       {
-        fill(#FF8400); //orange
+        fill(0xffFF8400); //orange
       }
       else if(digits[digit_index] == 3)
       {
-        fill(#FFEE00); //yellow
+        fill(0xffFFEE00); //yellow
         
       }
       else if(digits[digit_index] == 4)
       {
-        fill(#00FF00); //green
+        fill(0xff00FF00); //green
       }
       else if(digits[digit_index] == 5)
       {
-        fill(#00FFEE); //light blue
+        fill(0xff00FFEE); //light blue
       }
       else if(digits[digit_index] == 6)
       {
-        fill(#0000FF); //blue
+        fill(0xff0000FF); //blue
       }
       else if(digits[digit_index] == 7)
       {
-        fill(#3F00AB); //indigo
+        fill(0xff3F00AB); //indigo
       }
       else if(digits[digit_index] == 8)
       {
-        fill(#7C00A6); //violet
+        fill(0xff7C00A6); //violet
       }
       else if(digits[digit_index] == 9)
       {
-        fill(#DE89FA); //lavender
+        fill(0xffDE89FA); //lavender
       }
       else
       {
@@ -77,5 +96,9 @@ void setup()
         digit_index++;
       } 
     }
+  }
+}
+  static public void main(String args[]) {
+    PApplet.main(new String[] { "--bgcolor=#F0F0F0", "pi_colors" });
   }
 }
